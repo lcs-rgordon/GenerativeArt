@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct MosaicView: View {
+    
+    @State var selectedSize = 100.0
+    
     var body: some View {
-        TileView()
+        VStack {
+            
+            Spacer()
+            
+            TileView(size: selectedSize)
+            
+            Spacer()
+            
+            Divider()
+            
+            Spacer()
+            
+            Slider(value: $selectedSize, in: 10...200, step: 10)
+                .padding()
+            
+            Spacer()
+        }
     }
 }
 
