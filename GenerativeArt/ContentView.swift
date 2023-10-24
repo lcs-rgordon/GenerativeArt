@@ -7,19 +7,28 @@
 
 import SwiftUI
 
+enum Coin: Int {
+    case heads = 1
+    case tails = 2
+    
+    static func flip() -> Coin {
+        return Bool.random() == true ? .heads : .tails
+    }
+}
+
 struct ContentView: View {
     
     // MARK: Stored properties
-    let coinFlipOne = Int.random(in: 1...2)
+    let decisionOne = Coin.flip()
     let colourOne = Color.red
     let colourTwo = Color.blue
     
     // MARK: Computed properties
     var markerOne: Color {
-        return coinFlipOne == 1 ? colourOne : colourTwo
+        return decisionOne == .heads ? colourOne : colourTwo
     }
     var markerTwo: Color {
-        return coinFlipOne == 1 ? colourTwo : colourOne
+        return decisionOne == .tails ? colourTwo : colourOne
     }
     
     var body: some View {
