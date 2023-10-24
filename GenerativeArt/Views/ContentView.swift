@@ -33,7 +33,8 @@ struct ContentView: View {
         HStack {
             
             if flipOne == .heads {
-
+                
+                // Top left to bottom right
                 ZStack {
                     
                     TriangleTopLeft()
@@ -49,6 +50,7 @@ struct ContentView: View {
 
             } else {
                 
+                // Top right to bottom left
                 ZStack {
                     
                     TriangleTopRight()
