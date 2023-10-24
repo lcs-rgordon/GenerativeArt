@@ -10,6 +10,7 @@ import SwiftUI
 struct TileView: View {
     
     let baseHue: Double
+    let secondaryHueOffset: Double
     let colourOne: Color
     let colourTwo: Color
 
@@ -83,15 +84,21 @@ struct TileView: View {
     }
     
     // MARK: Initializers
-    init(baseHue: Double, colourOne: Color = .blue, colourTwo: Color = .red) {
+    init(
+        baseHue: Double,
+        secondaryHueOffset: Double = 30.0,
+        colourOne: Color = .blue,
+        colourTwo: Color = .red
+    ) {
         self.baseHue = baseHue
+        self.secondaryHueOffset = secondaryHueOffset
         self.colourOne = Color(
             hue: baseHue / 360.0,
             saturation: 0.8,
             brightness: 0.9
         )
         self.colourTwo = Color(
-            hue: (baseHue + 45).remainder(dividingBy: 360.0) / 360.0,
+            hue: (baseHue + secondaryHueOffset).remainder(dividingBy: 360.0) / 360.0,
             saturation: 0.8,
             brightness: 0.9
         )
@@ -100,6 +107,9 @@ struct TileView: View {
 
 
 #Preview {
-    TileView(baseHue: 60.0)
-        .padding()
+    TileView(
+        baseHue: 60.0,
+        secondaryHueOffset: 30.0
+    )
+    .padding()
 }

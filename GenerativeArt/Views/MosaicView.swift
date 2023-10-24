@@ -13,6 +13,7 @@ struct MosaicView: View {
     @State var selectedColumns = 3.0
     @State var selectedRows = 3.0
     @State var selectedHue = 0.0
+    @State var selectedOffset = 45.0
 
     // MARK: Computed properties
     var columnsRangeEnd: Int {
@@ -30,7 +31,10 @@ struct MosaicView: View {
                 ForEach(1..<rowsRangeEnd, id: \.self) { _ in
                     GridRow {
                         ForEach(1..<columnsRangeEnd, id: \.self) { _ in
-                            TileView(baseHue: selectedHue)
+                            TileView(
+                                baseHue: selectedHue,
+                                secondaryHueOffset: selectedOffset
+                            )
                         }
                     }
                 }
@@ -70,7 +74,19 @@ struct MosaicView: View {
                     .bold()
                 HStack {
                     Text("0°")
-                    Slider(value: $selectedHue, in: 1...360, step: 1.0)
+                    Slider(value: $selectedHue, in: 0...360, step: 1.0)
+                    Text("360°")
+                }
+                .padding()
+            }
+            .padding()
+
+            VStack(spacing: 0) {
+                Text("Offset")
+                    .bold()
+                HStack {
+                    Text("0°")
+                    Slider(value: $selectedOffset, in: 0...360, step: 1.0)
                     Text("360°")
                 }
                 .padding()
