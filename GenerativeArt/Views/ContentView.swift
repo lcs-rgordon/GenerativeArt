@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-enum Coin: Int {
-    case heads = 1
-    case tails = 2
-    
-    static func flip() -> Coin {
-        return Bool.random() == true ? .heads : .tails
-    }
-}
-
 struct ContentView: View {
     
     // MARK: Stored properties
