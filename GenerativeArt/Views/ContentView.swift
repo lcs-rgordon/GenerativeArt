@@ -17,7 +17,7 @@ struct ContentView: View {
     let colourTwo = Color.blue
     
     // Decisions for rest of the design
-    let flipOne = Coin.flip()
+    let flipOne = Coin.tails
     let flipTwo = Coin.flip()
     let flipThree = Coin.flip()
     
@@ -38,11 +38,11 @@ struct ContentView: View {
                     
                     TriangleBottomRight()
                         .stroke(.black)
-                        .fill(.clear)
-                    
+                        .fill(flipTwo == .tails ? markerOne : .clear)
+
                     TriangleTopLeft()
                         .stroke(.black)
-                        .fill(.clear)
+                        .fill(flipTwo == .heads ? markerOne : .clear)
                     
                 }
                 .frame(width: 100, height: 100)
@@ -53,12 +53,12 @@ struct ContentView: View {
                     
                     TriangleTopRight()
                         .stroke(.black)
-                        .fill(.clear)
-                    
+                        .fill(flipTwo == .heads ? markerOne : .clear)
+
                     TriangleBottomLeft()
                         .stroke(.black)
-                        .fill(.clear)
-                    
+                        .fill(flipTwo == .tails ? markerOne : .clear)
+
                 }
                 .frame(width: 100, height: 100)
                 
