@@ -11,9 +11,6 @@ struct TileView: View {
 
     // MARK: Stored properties
     
-    // Size of tile
-    let size: CGFloat
-    
     // Decide on colours
     let flipForColor = Coin.heads
     let colourOne = Color.red
@@ -60,7 +57,6 @@ struct TileView: View {
                         .fill(flipTwo == .tails ? markerOne : remainingTriangleFillColor)
 
                 }
-                .frame(width: size, height: size)
 
             } else {
                 
@@ -76,16 +72,17 @@ struct TileView: View {
                         .fill(flipTwo == .tails ? markerOne : remainingTriangleFillColor)
 
                 }
-                .frame(width: size, height: size)
                 
             }
             
         }
-        
+        .aspectRatio(1.0, contentMode: .fit)
+
     }
 }
 
 
 #Preview {
-    TileView(size: 100)
+    TileView()
+        .padding()
 }
