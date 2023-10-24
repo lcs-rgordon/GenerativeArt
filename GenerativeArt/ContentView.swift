@@ -14,11 +14,7 @@ struct ContentView: View {
     
     // MARK: Computed properties
     var selectedColor: Color {
-        if coinFlipOne == 1 {
-            return .blue
-        } else {
-            return .red
-        }
+        return coinFlipOne == 1 ? .red : .blue
     }
     
     var body: some View {
