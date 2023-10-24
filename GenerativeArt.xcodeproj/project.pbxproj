@@ -12,6 +12,7 @@
 		81958BF42AE7DF2700292415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81958BF32AE7DF2700292415 /* Assets.xcassets */; };
 		81958BF72AE7DF2700292415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81958BF62AE7DF2700292415 /* Preview Assets.xcassets */; };
 		81958BFF2AE7E7DF00292415 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81958BFE2AE7E7DF00292415 /* Coin.swift */; };
+		819B694E2AE7F2BC00C73C77 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B694D2AE7F2BC00C73C77 /* Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		81958BF32AE7DF2700292415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81958BF62AE7DF2700292415 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81958BFE2AE7E7DF00292415 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		819B694D2AE7F2BC00C73C77 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				81958BFE2AE7E7DF00292415 /* Coin.swift */,
+				819B694D2AE7F2BC00C73C77 /* Shape.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				81958BFF2AE7E7DF00292415 /* Coin.swift in Sources */,
 				81958BF22AE7DF2500292415 /* ContentView.swift in Sources */,
 				81958BF02AE7DF2500292415 /* GenerativeArtApp.swift in Sources */,
+				819B694E2AE7F2BC00C73C77 /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
