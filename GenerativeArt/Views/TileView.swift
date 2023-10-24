@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TileView.swift
 //  GenerativeArt
 //
 //  Created by Russell Gordon on 2023-10-24.
@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-// Implementation based on rules given here:
-//
-// https://ics4u-2023-24.russellgordon.ca/images/introduction-to-generative-art/
-
-struct ContentView: View {
+struct TileView: View {
 
     // MARK: Stored properties
     
@@ -86,6 +82,7 @@ struct ContentView: View {
     }
 }
 
+
 #Preview {
-    ContentView()
+    TileView()
 }

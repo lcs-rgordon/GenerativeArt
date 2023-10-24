@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		81958BF02AE7DF2500292415 /* GenerativeArtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81958BEF2AE7DF2500292415 /* GenerativeArtApp.swift */; };
-		81958BF22AE7DF2500292415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81958BF12AE7DF2500292415 /* ContentView.swift */; };
 		81958BF42AE7DF2700292415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81958BF32AE7DF2700292415 /* Assets.xcassets */; };
 		81958BF72AE7DF2700292415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81958BF62AE7DF2700292415 /* Preview Assets.xcassets */; };
 		81958BFF2AE7E7DF00292415 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81958BFE2AE7E7DF00292415 /* Coin.swift */; };
 		819B694E2AE7F2BC00C73C77 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B694D2AE7F2BC00C73C77 /* Shape.swift */; };
+		81EBECF22AE7FE9000DB0E23 /* MosaicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBECF12AE7FE9000DB0E23 /* MosaicView.swift */; };
+		81EBECF42AE7FE9A00DB0E23 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBECF32AE7FE9A00DB0E23 /* TileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		81958BEC2AE7DF2500292415 /* GenerativeArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenerativeArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81958BEF2AE7DF2500292415 /* GenerativeArtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerativeArtApp.swift; sourceTree = "<group>"; };
-		81958BF12AE7DF2500292415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81958BF32AE7DF2700292415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81958BF62AE7DF2700292415 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81958BFE2AE7E7DF00292415 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		819B694D2AE7F2BC00C73C77 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		81EBECF12AE7FE9000DB0E23 /* MosaicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicView.swift; sourceTree = "<group>"; };
+		81EBECF32AE7FE9A00DB0E23 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,8 @@
 		81958C002AE7E7FF00292415 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				81958BF12AE7DF2500292415 /* ContentView.swift */,
+				81EBECF12AE7FE9000DB0E23 /* MosaicView.swift */,
+				81EBECF32AE7FE9A00DB0E23 /* TileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,9 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81958BFF2AE7E7DF00292415 /* Coin.swift in Sources */,
-				81958BF22AE7DF2500292415 /* ContentView.swift in Sources */,
 				81958BF02AE7DF2500292415 /* GenerativeArtApp.swift in Sources */,
 				819B694E2AE7F2BC00C73C77 /* Shape.swift in Sources */,
+				81EBECF42AE7FE9A00DB0E23 /* TileView.swift in Sources */,
+				81EBECF22AE7FE9000DB0E23 /* MosaicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
