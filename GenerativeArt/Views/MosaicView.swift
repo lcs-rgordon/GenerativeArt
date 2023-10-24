@@ -9,6 +9,14 @@ import SwiftUI
 
 struct MosaicView: View {
     
+    // MARK: Stored properties
+    @State var selectedColumns = 3.0
+    
+    // MARK: Computed properties
+    var columnsRangeEnd: Int {
+        return Int(selectedColumns) + 1
+    }
+    
     var body: some View {
         VStack {
             
@@ -16,7 +24,7 @@ struct MosaicView: View {
 
             Grid(horizontalSpacing: 0) {
                 GridRow {
-                    ForEach(1..<4) { _ in
+                    ForEach(1..<columnsRangeEnd, id: \.self) { _ in
                         TileView()
                     }
                 }
@@ -26,12 +34,18 @@ struct MosaicView: View {
             Spacer()
             
             Divider()
-            
-            Spacer()
-            
-            Text("Controls go here")
-            
-            Spacer()
+                        
+            VStack(spacing: 0) {
+                Text("Columns")
+                    .bold()
+                HStack {
+                    Text("1")
+                    Slider(value: $selectedColumns, in: 1...10, step: 1.0)
+                    Text("10")
+                }
+                .padding()
+            }
+            .padding()
         }
     }
 }
