@@ -17,7 +17,7 @@ struct ContentView: View {
     let colourTwo = Color.blue
     
     // Decisions for rest of the design
-    let flipOne = Coin.tails
+    let flipOne = Coin.tails    // Focus on first form for now
     let flipTwo = Coin.flip()
     let flipThree = Coin.flip()
     
@@ -36,14 +36,14 @@ struct ContentView: View {
 
                 ZStack {
                     
+                    TriangleTopLeft()
+                        .stroke(.black)
+                        .fill(flipTwo == .heads ? markerOne : .clear)
+
                     TriangleBottomRight()
                         .stroke(.black)
                         .fill(flipTwo == .tails ? markerOne : .clear)
 
-                    TriangleTopLeft()
-                        .stroke(.black)
-                        .fill(flipTwo == .heads ? markerOne : .clear)
-                    
                 }
                 .frame(width: 100, height: 100)
 
