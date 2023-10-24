@@ -13,9 +13,15 @@ struct MosaicView: View {
         VStack {
             
             Spacer()
-            
-            TileView()
-                .padding()
+
+            Grid(horizontalSpacing: 0) {
+                GridRow {
+                    ForEach(1..<4) { _ in
+                        TileView()
+                    }
+                }
+            }
+            .padding()
             
             Spacer()
             
