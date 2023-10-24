@@ -42,7 +42,7 @@ struct TriangleTopRight: Shape {
 }
 
 struct TriangleBottomRight: Shape {
-
+    
     // On iOS, the co-ordinate system is flipped
     // Origin at upper left and positive values on vertical axis extend downward
     func path(in rect: CGRect) -> Path {
@@ -56,11 +56,11 @@ struct TriangleBottomRight: Shape {
         
         return path
     }
-
+    
 }
 
 struct TriangleTopLeft: Shape {
-
+    
     // On iOS, the co-ordinate system is flipped
     // Origin at upper left and positive values on vertical axis extend downward
     func path(in rect: CGRect) -> Path {
@@ -74,46 +74,54 @@ struct TriangleTopLeft: Shape {
         
         return path
     }
-
+    
 }
 
 struct ContentView: View {
     
     // MARK: Stored properties
-    let decisionOne = Coin.flip()
+    let colourDecision = Coin.flip()
     let colourOne = Color.red
     let colourTwo = Color.blue
     
     // MARK: Computed properties
     var markerOne: Color {
-        return decisionOne == .heads ? colourOne : colourTwo
+        return colourDecision == .heads ? colourOne : colourTwo
     }
     var markerTwo: Color {
-        return decisionOne == .tails ? colourTwo : colourOne
+        return colourDecision == .tails ? colourTwo : colourOne
     }
     
     var body: some View {
-        ZStack {
+        HStack {
+            ZStack {
+                
+                TriangleBottomRight()
+                    .stroke(.black)
+                    .fill(.blue)
+                
+                TriangleTopLeft()
+                    .stroke(.black)
+                    .fill(.red)
+                
+            }
+            .frame(width: 100, height: 100)
             
-//            TriangleTopRight()
-//                .stroke(.black)
-//                .fill(.purple)
-//            
-//            TriangleBottomLeft()
-//                .stroke(.black)
-//                .fill(.yellow)
+            ZStack {
+                
+                TriangleTopRight()
+                    .stroke(.black)
+                    .fill(.purple)
+                
+                TriangleBottomLeft()
+                    .stroke(.black)
+                    .fill(.yellow)
+                
+            }
+            .frame(width: 100, height: 100)
             
-            TriangleBottomRight()
-                .stroke(.black)
-                .fill(.blue)
-            
-            TriangleTopLeft()
-                .stroke(.black)
-                .fill(.red)
-
         }
-        .frame(width: 100, height: 100)
-        .padding()
+        
     }
 }
 
