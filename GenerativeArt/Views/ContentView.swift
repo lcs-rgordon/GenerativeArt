@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+struct TriangleBottomLeft: Shape {
+    
+    // On iOS, the co-ordinate system is flipped
+    // Origin at upper left and positive values on vertical axis extend downward
+    func path(in rect: CGRect) -> Path {
+        
+        var path = Path()
+        
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        
+        return path
+    }
+}
+
 struct ContentView: View {
     
     // MARK: Stored properties
@@ -23,12 +40,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
+        ZStack {
+            
+            TriangleBottomLeft()
+            
             Rectangle()
                 .fill(.clear)
                 .border(.black)
-                .frame(width: 100, height: 100)
         }
+        .frame(width: 100, height: 100)
         .padding()
     }
 }
