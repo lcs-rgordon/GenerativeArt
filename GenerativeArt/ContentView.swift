@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // MARK: Stored properties
+    let coinFlipOne = Int.random(in: 1...2)
+    
+    // MARK: Computed properties
+    var selectedColor: Color {
+        if coinFlipOne == 1 {
+            return .blue
+        } else {
+            return .red
+        }
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Rectangle()
+                .fill(selectedColor)
+                .frame(width: 100, height: 100)
         }
         .padding()
     }
