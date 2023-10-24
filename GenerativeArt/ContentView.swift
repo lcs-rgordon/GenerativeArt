@@ -11,16 +11,22 @@ struct ContentView: View {
     
     // MARK: Stored properties
     let coinFlipOne = Int.random(in: 1...2)
+    let colourOne = Color.red
+    let colourTwo = Color.blue
     
     // MARK: Computed properties
-    var selectedColor: Color {
-        return coinFlipOne == 1 ? .red : .blue
+    var markerOne: Color {
+        return coinFlipOne == 1 ? colourOne : colourTwo
+    }
+    var markerTwo: Color {
+        return coinFlipOne == 1 ? colourTwo : colourOne
     }
     
     var body: some View {
         VStack {
             Rectangle()
-                .fill(selectedColor)
+                .fill(.clear)
+                .border(.black)
                 .frame(width: 100, height: 100)
         }
         .padding()
