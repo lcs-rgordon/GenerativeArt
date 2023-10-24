@@ -10,9 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: Stored properties
+    
+    // Decide on colours
     let colourDecision = Coin.flip()
     let colourOne = Color.red
     let colourTwo = Color.blue
+    
+    // Decisions for rest of the design
+    let flipOne = Coin.flip()
+    let flipTwo = Coin.flip()
+    let flipThree = Coin.flip()
     
     // MARK: Computed properties
     var markerOne: Color {
@@ -24,31 +31,38 @@ struct ContentView: View {
     
     var body: some View {
         HStack {
-            ZStack {
-                
-                TriangleBottomRight()
-                    .stroke(.black)
-                    .fill(.blue)
-                
-                TriangleTopLeft()
-                    .stroke(.black)
-                    .fill(.red)
-                
-            }
-            .frame(width: 100, height: 100)
             
-            ZStack {
+            if flipOne == .heads {
+
+                ZStack {
+                    
+                    TriangleBottomRight()
+                        .stroke(.black)
+                        .fill(.clear)
+                    
+                    TriangleTopLeft()
+                        .stroke(.black)
+                        .fill(.clear)
+                    
+                }
+                .frame(width: 100, height: 100)
+
+            } else {
                 
-                TriangleTopRight()
-                    .stroke(.black)
-                    .fill(.purple)
-                
-                TriangleBottomLeft()
-                    .stroke(.black)
-                    .fill(.yellow)
+                ZStack {
+                    
+                    TriangleTopRight()
+                        .stroke(.black)
+                        .fill(.clear)
+                    
+                    TriangleBottomLeft()
+                        .stroke(.black)
+                        .fill(.clear)
+                    
+                }
+                .frame(width: 100, height: 100)
                 
             }
-            .frame(width: 100, height: 100)
             
         }
         
