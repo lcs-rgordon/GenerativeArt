@@ -41,6 +41,23 @@ struct TriangleTopRight: Shape {
     }
 }
 
+struct TriangleBottomRight: Shape {
+
+    // On iOS, the co-ordinate system is flipped
+    // Origin at upper left and positive values on vertical axis extend downward
+    func path(in rect: CGRect) -> Path {
+        
+        var path = Path()
+        
+        path.move(to: CGPoint(x: rect.maxX, y: rect.maxY))      // bottom-right corner
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))   // bottom-left corner
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))   // top-right corner
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))   // bottom-right corner
+        
+        return path
+    }
+
+}
 
 struct ContentView: View {
     
@@ -60,14 +77,24 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
-            TriangleTopRight()
-                .stroke(.black)
-                .fill(.purple)
+//            TriangleTopRight()
+//                .stroke(.black)
+//                .fill(.purple)
+//            
+//            TriangleBottomLeft()
+//                .stroke(.black)
+//                .fill(.yellow)
             
-            TriangleBottomLeft()
-                .stroke(.black)
-                .fill(.yellow)
-
+            TriangleBottomRight()
+                .stroke(
+                    .purple,
+                    style: StrokeStyle(
+                        lineWidth: 5,
+                        lineCap: CGLineCap.square,
+                        lineJoin: CGLineJoin.miter
+                    )
+                )
+                .fill(.blue)
 
         }
         .frame(width: 100, height: 100)
