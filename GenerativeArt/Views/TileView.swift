@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TileView: View {
+    
+    let baseHue: Double
+    let colourOne: Color
+    let colourTwo: Color
 
     // MARK: Stored properties
     
     // Decide on colours
     let flipForColor = Coin.heads
-    let colourOne = Color.red
-    let colourTwo = Color.blue
     
     // Decisions for rest of the design
     let flipOne = Coin.flip()
@@ -37,7 +39,7 @@ struct TileView: View {
         } else {
             return .clear
         }
-            
+        
     }
     
     var body: some View {
@@ -51,13 +53,13 @@ struct TileView: View {
                     TriangleTopRight()
                         .stroke(.black)
                         .fill(flipTwo == .heads ? markerOne : remainingTriangleFillColor)
-
+                    
                     TriangleBottomLeft()
                         .stroke(.black)
                         .fill(flipTwo == .tails ? markerOne : remainingTriangleFillColor)
-
+                    
                 }
-
+                
             } else {
                 
                 // Top right to bottom left
@@ -66,23 +68,38 @@ struct TileView: View {
                     TriangleTopLeft()
                         .stroke(.black)
                         .fill(flipTwo == .heads ? markerOne : remainingTriangleFillColor)
-
+                    
                     TriangleBottomRight()
                         .stroke(.black)
                         .fill(flipTwo == .tails ? markerOne : remainingTriangleFillColor)
-
+                    
                 }
                 
             }
             
         }
         .aspectRatio(1.0, contentMode: .fit)
-
+        
+    }
+    
+    // MARK: Initializers
+    init(baseHue: Double, colourOne: Color = .blue, colourTwo: Color = .red) {
+        self.baseHue = baseHue
+        self.colourOne = Color(
+            hue: baseHue / 360.0,
+            saturation: 0.8,
+            brightness: 0.9
+        )
+        self.colourTwo = Color(
+            hue: (baseHue + 45).remainder(dividingBy: 360.0) / 360.0,
+            saturation: 0.8,
+            brightness: 0.9
+        )
     }
 }
 
 
 #Preview {
-    TileView()
+    TileView(baseHue: 60.0)
         .padding()
 }

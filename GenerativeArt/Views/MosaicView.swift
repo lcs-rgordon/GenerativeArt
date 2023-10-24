@@ -12,6 +12,7 @@ struct MosaicView: View {
     // MARK: Stored properties
     @State var selectedColumns = 3.0
     @State var selectedRows = 3.0
+    @State var selectedHue = 0.0
 
     // MARK: Computed properties
     var columnsRangeEnd: Int {
@@ -29,7 +30,7 @@ struct MosaicView: View {
                 ForEach(1..<rowsRangeEnd, id: \.self) { _ in
                     GridRow {
                         ForEach(1..<columnsRangeEnd, id: \.self) { _ in
-                            TileView()
+                            TileView(baseHue: selectedHue)
                         }
                     }
                 }
@@ -59,6 +60,18 @@ struct MosaicView: View {
                     Text("1")
                     Slider(value: $selectedRows, in: 1...10, step: 1.0)
                     Text("10")
+                }
+                .padding()
+            }
+            .padding()
+
+            VStack(spacing: 0) {
+                Text("Base Hue")
+                    .bold()
+                HStack {
+                    Text("0°")
+                    Slider(value: $selectedHue, in: 1...360, step: 1.0)
+                    Text("360°")
                 }
                 .padding()
             }
